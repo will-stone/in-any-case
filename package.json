@@ -122,11 +122,11 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
+    "vscode:prepublish": "yarn compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "localtest": "npm run compile && node ./node_modules/vscode/bin/test",
+    "localtest": "yarn compile && node ./node_modules/vscode/bin/test",
     "test": "node ./node_modules/vscode/bin/test",
     "vspublish": "vsce publish"
   },
