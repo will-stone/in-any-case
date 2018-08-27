@@ -1,0 +1,146 @@
+{
+  "name": "in-any-case",
+  "displayName": "In Any Case",
+  "description": "Convert between string cases",
+  "version": "1.0.0",
+  "publisher": "will-stone",
+  "engines": {
+    "vscode": "^1.26.0"
+  },
+  "keywords": ["case", "convert", "string", "text"],
+  "license": "MIT",
+  "categories": ["Other"],
+  "main": "./out/extension",
+  "icon": "icon.png",
+  "bugs": {
+    "url": "https://github.com/will-stone/in-any-case/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/will-stone/in-any-case"
+  },
+  "activationEvents": [
+    "onCommand:extension.iac.camelCase",
+    "onCommand:extension.iac.capitalize",
+    "onCommand:extension.iac.constantCase",
+    "onCommand:extension.iac.deburr",
+    "onCommand:extension.iac.escape",
+    "onCommand:extension.iac.kebabCase",
+    "onCommand:extension.iac.lowerCase",
+    "onCommand:extension.iac.lowerFirst",
+    "onCommand:extension.iac.pascalCase",
+    "onCommand:extension.iac.snakeCase",
+    "onCommand:extension.iac.startCase",
+    "onCommand:extension.iac.toLower",
+    "onCommand:extension.iac.toUpper",
+    "onCommand:extension.iac.unescape",
+    "onCommand:extension.iac.upperCase",
+    "onCommand:extension.iac.upperFirst"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "category": "In Any Case",
+        "command": "extension.iac.camelCase",
+        "title": "camelCase"
+      },
+      {
+        "category": "In Any Case",
+        "command": "extension.iac.capitalize",
+        "title": "Capitalize"
+      },
+      {
+        "category": "In Any Case",
+        "command": "extension.iac.constantCase",
+        "title": "CONSTANT_CASE"
+      },
+      {
+        "category": "In Any Case",
+        "command": "extension.iac.deburr",
+        "title": "Deburr"
+      },
+      {
+        "category": "In Any Case",
+        "command": "extension.iac.escape",
+        "title": "Escape"
+      },
+      {
+        "category": "In Any Case",
+        "command": "extension.iac.kebabCase",
+        "title": "kebab-case"
+      },
+      {
+        "category": "In Any Case",
+        "command": "extension.iac.lowerCase",
+        "title": "lower case"
+      },
+      {
+        "category": "In Any Case",
+        "command": "extension.iac.lowerFirst",
+        "title": "lOWER FIRST"
+      },
+      {
+        "category": "In Any Case",
+        "command": "extension.iac.pascalCase",
+        "title": "PascalCase"
+      },
+      {
+        "category": "In Any Case",
+        "command": "extension.iac.snakeCase",
+        "title": "snake_case"
+      },
+      {
+        "category": "In Any Case",
+        "command": "extension.iac.startCase",
+        "title": "Start Case"
+      },
+      {
+        "category": "In Any Case",
+        "command": "extension.iac.toLower",
+        "title": "to_lower"
+      },
+      {
+        "category": "In Any Case",
+        "command": "extension.iac.toUpper",
+        "title": "TO_UPPER"
+      },
+      {
+        "category": "In Any Case",
+        "command": "extension.iac.unescape",
+        "title": "Unescape"
+      },
+      {
+        "category": "In Any Case",
+        "command": "extension.iac.upperCase",
+        "title": "UPPER CASE"
+      },
+      {
+        "category": "In Any Case",
+        "command": "extension.iac.upperFirst",
+        "title": "Upper first"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "localtest": "npm run compile && node ./node_modules/vscode/bin/test",
+    "test": "node ./node_modules/vscode/bin/test",
+    "vspublish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.116",
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^8.10.25",
+    "tslint": "^5.8.0",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^3.0.1",
+    "vsce": "^1.42.0",
+    "vscode": "^1.1.21"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
+}
