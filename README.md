@@ -1,6 +1,6 @@
 # In Any Case
 
-<img src="icon.png" alt="drawing" width="120"/>
+<img src="https://raw.githubusercontent.com/will-stone/in-any-case/master/icon.png" alt="drawing" width="120"/>
 
 VSCode extension that converts strings between cases using the
 [Lodash](https://lodash.com/docs/4.17.10#camelCase) utility library. Whilst
