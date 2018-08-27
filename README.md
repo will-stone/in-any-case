@@ -2,7 +2,7 @@
 
 <img src="icon.png" alt="drawing" width="120"/>
 
-Converts strings between cases using the
+VSCode extension that converts strings between cases using the
 [Lodash](https://lodash.com/docs/4.17.10#camelCase) utility library. Whilst
 there are already many string manipulation extensions, I simply wanted to build
 one for myself. I won't be offended if you'd rather use an alternative. However,
