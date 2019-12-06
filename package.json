@@ -1,23 +1,87 @@
 {
   "name": "in-any-case",
-  "displayName": "In Any Case",
-  "description": "Convert between string cases",
   "version": "1.0.0",
-  "publisher": "will-stone",
-  "engines": {
-    "vscode": "^1.26.0"
-  },
-  "keywords": ["case", "convert", "string", "text"],
-  "license": "MIT",
-  "categories": ["Other"],
-  "main": "./out/extension",
-  "icon": "icon.png",
+  "description": "Convert between string cases",
+  "keywords": [
+    "case",
+    "convert",
+    "string",
+    "text"
+  ],
   "bugs": {
     "url": "https://github.com/will-stone/in-any-case/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/will-stone/in-any-case"
+  },
+  "license": "MIT",
+  "main": "./out/extension",
+  "scripts": {
+    "compile": "tsc -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "lint": "eslint './**/*.ts'",
+    "localtest": "yarn compile && node ./node_modules/vscode/bin/test",
+    "pretty-package": "prettier --write package.json",
+    "test": "node ./node_modules/vscode/bin/test",
+    "vscode:prepublish": "yarn compile",
+    "vspublish": "vsce publish",
+    "watch": "tsc -watch -p ./"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pretty-package && git add package.json"
+    }
+  },
+  "prettier": "@will-stone/prettier-config",
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true,
+      "mocha": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier/@typescript-eslint",
+      "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "simple-import-sort"
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+      "simple-import-sort/sort": "error"
+    }
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.116",
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^8.10.25",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "@will-stone/prettier-config": "^2.0.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-simple-import-sort": "^5.0.0",
+    "husky": "^3.1.0",
+    "typescript": "^3.7.3",
+    "vsce": "^1.42.0",
+    "vscode": "^1.1.21"
+  },
+  "engines": {
+    "vscode": "^1.40.0"
   },
   "activationEvents": [
     "onCommand:extension.iac.camelCase",
@@ -36,6 +100,9 @@
     "onCommand:extension.iac.unescape",
     "onCommand:extension.iac.upperCase",
     "onCommand:extension.iac.upperFirst"
+  ],
+  "categories": [
+    "Other"
   ],
   "contributes": {
     "commands": [
@@ -121,26 +188,7 @@
       }
     ]
   },
-  "scripts": {
-    "vscode:prepublish": "yarn compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "localtest": "yarn compile && node ./node_modules/vscode/bin/test",
-    "test": "node ./node_modules/vscode/bin/test",
-    "vspublish": "vsce publish"
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.14.116",
-    "@types/mocha": "^2.2.42",
-    "@types/node": "^8.10.25",
-    "tslint": "^5.8.0",
-    "tslint-config-prettier": "^1.15.0",
-    "typescript": "^3.0.1",
-    "vsce": "^1.42.0",
-    "vscode": "^1.1.21"
-  },
-  "dependencies": {
-    "lodash": "^4.17.10"
-  }
+  "displayName": "In Any Case",
+  "icon": "icon.png",
+  "publisher": "will-stone"
 }

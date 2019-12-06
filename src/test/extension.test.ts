@@ -8,13 +8,13 @@ import TextEditor = vscode.TextEditor
 
 import CASES from '../cases'
 
-const delay = (ms: number) => {
+const delay = (ms: number): Promise<void> => {
   return new Promise(resolve => {
     setTimeout(resolve, ms)
   })
 }
 
-const testString = async (cmd: string) => {
+const testString = async (cmd: string): Promise<string> => {
   const editor = vscode.window.activeTextEditor as TextEditor
   const { document } = editor
   await vscode.commands.executeCommand(`extension.iac.${cmd}`)
@@ -23,7 +23,7 @@ const testString = async (cmd: string) => {
   return text
 }
 
-const reset = async (testInput: string) => {
+const reset = async (testInput: string): Promise<void> => {
   const editor = vscode.window.activeTextEditor as TextEditor
   await editor.edit(edit => {
     edit.replace(new Range(new Position(0, 0), new Position(0, 27)), testInput)
