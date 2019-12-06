@@ -92,12 +92,11 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@will-stone/prettier-config@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@will-stone/prettier-config/-/prettier-config-2.0.0.tgz#5efff87571772ee3d31b3e73f464046000d3a7a7"
-  integrity sha512-7qpNLEBwHFmxDiKI0024zOSJELjpnOM7Ts8BmABRYCJt2Y3xaE+eP50go6q8ldXPQenrv2uNxQiaHhkEMaEPSQ==
+"@will-stone/prettier-config@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@will-stone/prettier-config/-/prettier-config-2.0.1.tgz#eff0b13b17cd7a170a9ca1d8e4f6006d5682eac9"
+  integrity sha512-RZTFbwtSNRZlPrSqVtKDSUZbV8eguNxQJ5sVf1GkpMbZfd3n422i7NkSwGhSCo4424naUbkn6qvAG/W88OOuZw==
   dependencies:
-    prettier "1.x.x"
     prettier-plugin-packagejson "2.x.x"
 
 acorn-jsx@^5.1.0:
@@ -1919,7 +1918,7 @@ prettier-plugin-packagejson@2.x.x:
   dependencies:
     sort-package-json "1.30.0"
 
-prettier@1.x.x:
+prettier@^1.19.1:
   version "1.19.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
   integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
