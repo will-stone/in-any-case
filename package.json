@@ -22,10 +22,10 @@
     "lint": "eslint './**/*.ts'",
     "localtest": "yarn compile && node ./node_modules/vscode/bin/test",
     "pretty-package": "prettier --write package.json",
+    "prerelease": "yarn compile",
+    "release": "vsce publish",
     "pretest": "yarn compile",
     "test": "node ./out/test/runTest.js",
-    "vscode:prepublish": "yarn compile",
-    "vspublish": "vsce publish",
     "watch": "tsc -watch -p ./"
   },
   "husky": {
