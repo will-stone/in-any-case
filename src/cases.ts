@@ -1,18 +1,19 @@
-import camelCase = require('lodash/camelCase')
-import capitalize = require('lodash/capitalize')
-import deburr = require('lodash/deburr')
-import escape = require('lodash/escape')
-import flow = require('lodash/flow')
-import kebabCase = require('lodash/kebabCase')
-import lowerCase = require('lodash/lowerCase')
-import lowerFirst = require('lodash/lowerFirst')
-import snakeCase = require('lodash/snakeCase')
-import startCase = require('lodash/startCase')
-import toLower = require('lodash/toLower')
-import toUpper = require('lodash/toUpper')
-import unescape = require('lodash/unescape')
-import upperCase = require('lodash/upperCase')
-import upperFirst = require('lodash/upperFirst')
+import titleCase from '@will-stone/title-case'
+import camelCase from 'lodash/camelCase'
+import capitalize from 'lodash/capitalize'
+import deburr from 'lodash/deburr'
+import escape from 'lodash/escape'
+import flow from 'lodash/flow'
+import kebabCase from 'lodash/kebabCase'
+import lowerCase from 'lodash/lowerCase'
+import lowerFirst from 'lodash/lowerFirst'
+import snakeCase from 'lodash/snakeCase'
+import startCase from 'lodash/startCase'
+import toLower from 'lodash/toLower'
+import toUpper from 'lodash/toUpper'
+import unescape from 'lodash/unescape'
+import upperCase from 'lodash/upperCase'
+import upperFirst from 'lodash/upperFirst'
 
 const CASES: Case[] = [
   {
@@ -80,6 +81,12 @@ const CASES: Case[] = [
     commandId: 'startCase',
     testInput: 'Lorem ipsum Dolor sit_Amet',
     testOutput: 'Lorem Ipsum Dolor Sit Amet',
+  },
+  {
+    changer: (str: string): string => titleCase(str),
+    commandId: 'titleCase',
+    testInput: 'this is a test',
+    testOutput: 'This is a Test',
   },
   {
     changer: (str: string): string => toLower(str),

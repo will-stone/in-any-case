@@ -1,6 +1,6 @@
 {
   "name": "in-any-case",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Convert between string cases",
   "keywords": [
     "case",
@@ -62,6 +62,7 @@
     }
   },
   "dependencies": {
+    "@will-stone/title-case": "^1.0.6",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
@@ -100,6 +101,7 @@
     "onCommand:extension.iac.pascalCase",
     "onCommand:extension.iac.snakeCase",
     "onCommand:extension.iac.startCase",
+    "onCommand:extension.iac.titleCase",
     "onCommand:extension.iac.toLower",
     "onCommand:extension.iac.toUpper",
     "onCommand:extension.iac.unescape",
@@ -165,6 +167,11 @@
         "category": "In Any Case",
         "command": "extension.iac.startCase",
         "title": "Start Case"
+      },
+      {
+        "category": "In Any Case",
+        "command": "extension.iac.titleCase",
+        "title": "Title Case"
       },
       {
         "category": "In Any Case",
