@@ -62,11 +62,11 @@
     }
   },
   "dependencies": {
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "@types/glob": "^7.1.1",
-    "@types/lodash": "^4.14.116",
+    "@types/lodash": "^4.14.149",
     "@types/mocha": "^5.2.7",
     "@types/node": "^8.10.59",
     "@types/vscode": "1.40.0",
