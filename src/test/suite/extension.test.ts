@@ -6,7 +6,7 @@ import Range = vscode.Range
 import Selection = vscode.Selection
 import TextEditor = vscode.TextEditor
 
-import CASES from '../cases'
+import CASES from '../../cases'
 
 const delay = (ms: number): Promise<void> => {
   return new Promise(resolve => {

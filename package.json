@@ -16,14 +16,14 @@
     "url": "https://github.com/will-stone/in-any-case"
   },
   "license": "MIT",
-  "main": "./out/extension",
+  "main": "./out/extension.js",
   "scripts": {
     "compile": "tsc -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
     "lint": "eslint './**/*.ts'",
     "localtest": "yarn compile && node ./node_modules/vscode/bin/test",
     "pretty-package": "prettier --write package.json",
-    "test": "node ./node_modules/vscode/bin/test",
+    "pretest": "yarn compile",
+    "test": "node ./out/test/runTest.js",
     "vscode:prepublish": "yarn compile",
     "vspublish": "vsce publish",
     "watch": "tsc -watch -p ./"
@@ -65,9 +65,11 @@
     "lodash": "^4.17.10"
   },
   "devDependencies": {
+    "@types/glob": "^7.1.1",
     "@types/lodash": "^4.14.116",
-    "@types/mocha": "^2.2.42",
+    "@types/mocha": "^5.2.7",
     "@types/node": "^8.10.59",
+    "@types/vscode": "1.40.0",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
     "@will-stone/prettier-config": "^2.0.1",
@@ -75,11 +77,13 @@
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-simple-import-sort": "^5.0.0",
+    "glob": "^7.1.6",
     "husky": "^3.1.0",
+    "mocha": "^6.2.2",
     "prettier": "^1.19.1",
     "typescript": "^3.7.3",
     "vsce": "^1.42.0",
-    "vscode": "^1.1.21"
+    "vscode-test": "^1.2.3"
   },
   "engines": {
     "vscode": "^1.40.0"
