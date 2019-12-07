@@ -27,6 +27,7 @@ Available commands:
 - PascalCase
 - snake_case
 - Start Case
+- Title Case (small words remain in lower case)
 - to_lower
 - TO_UPPER
 - Unescape
