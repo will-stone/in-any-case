@@ -26,6 +26,7 @@
     "release": "vsce publish",
     "pretest": "yarn compile",
     "test": "node ./out/test/runTest.js",
+    "typecheck": "tsc --noEmit --skipLibCheck",
     "watch": "tsc -watch -p ./"
   },
   "husky": {
@@ -82,7 +83,7 @@
     "husky": "^3.1.0",
     "mocha": "^6.2.2",
     "prettier": "^1.19.1",
-    "typescript": "^3.7.3",
+    "typescript": "^3.9.0",
     "vsce": "^1.70.0",
     "vscode-test": "^1.2.3"
   },
