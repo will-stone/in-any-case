@@ -126,10 +126,10 @@
   dependencies:
     prettier-plugin-packagejson "2.x.x"
 
-"@will-stone/title-case@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@will-stone/title-case/-/title-case-1.0.6.tgz#ce4ed6c5a91977554e16cbc83398296b43ef0b57"
-  integrity sha512-0M8MDmIhRYvoK/BnuWFEZfXk62zKQUzlC0A3zvjkJleVIeyqTeJkQFEuc4UgImWHXFlw+ADeaBWzZbT3OlRm3g==
+"@will-stone/title-case@^1.0.10":
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/@will-stone/title-case/-/title-case-1.0.10.tgz#a341c175e1ad50a89516e62d7868b3588af77a55"
+  integrity sha512-w3bC1C2WuJ4uD/TIZpoVpdssFWtztlWoBA3BRMM7jCM33MacZG1a53CbCqH3SJgyhoaS/zxa5ehUavZ80jW1eg==
 
 acorn-jsx@^5.1.0:
   version "5.1.0"
