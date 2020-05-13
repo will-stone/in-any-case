@@ -1,7 +1,11 @@
 {
   "name": "in-any-case",
+  "displayName": "In Any Case",
   "version": "1.1.0",
   "description": "Convert between string cases",
+  "categories": [
+    "Other"
+  ],
   "keywords": [
     "case",
     "convert",
@@ -16,12 +20,12 @@
     "url": "https://github.com/will-stone/in-any-case"
   },
   "license": "MIT",
+  "publisher": "will-stone",
   "main": "./out/extension.js",
   "scripts": {
     "compile": "tsc -p ./",
     "lint": "eslint './**/*.ts'",
     "localtest": "yarn compile && node ./node_modules/vscode/bin/test",
-    "pretty-package": "prettier --write package.json",
     "prerelease": "yarn compile",
     "release": "vsce publish",
     "pretest": "yarn compile",
@@ -29,89 +33,6 @@
     "typecheck": "tsc --noEmit --skipLibCheck",
     "watch": "tsc -watch -p ./"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn pretty-package && git add package.json"
-    }
-  },
-  "prettier": "@will-stone/prettier-config",
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "node": true,
-      "es6": true,
-      "mocha": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended",
-      "prettier/@typescript-eslint",
-      "plugin:prettier/recommended"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "ecmaVersion": 2018,
-      "sourceType": "module"
-    },
-    "plugins": [
-      "@typescript-eslint",
-      "simple-import-sort"
-    ],
-    "rules": {
-      "prettier/prettier": "error",
-      "simple-import-sort/sort": "error"
-    }
-  },
-  "dependencies": {
-    "@will-stone/title-case": "^1.0.10",
-    "lodash": "^4.17.15"
-  },
-  "devDependencies": {
-    "@types/glob": "^7.1.1",
-    "@types/lodash": "^4.14.149",
-    "@types/mocha": "^5.2.7",
-    "@types/node": "^8.10.59",
-    "@types/vscode": "1.40.0",
-    "@typescript-eslint/eslint-plugin": "^2.10.0",
-    "@typescript-eslint/parser": "^2.10.0",
-    "@will-stone/prettier-config": "^2.0.1",
-    "eslint": "^6.7.2",
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-simple-import-sort": "^5.0.0",
-    "glob": "^7.1.6",
-    "husky": "^3.1.0",
-    "mocha": "^6.2.2",
-    "prettier": "^1.19.1",
-    "typescript": "^3.9.0",
-    "vsce": "^1.70.0",
-    "vscode-test": "^1.2.3"
-  },
-  "engines": {
-    "vscode": "^1.40.0"
-  },
-  "activationEvents": [
-    "onCommand:extension.iac.camelCase",
-    "onCommand:extension.iac.capitalize",
-    "onCommand:extension.iac.constantCase",
-    "onCommand:extension.iac.deburr",
-    "onCommand:extension.iac.escape",
-    "onCommand:extension.iac.kebabCase",
-    "onCommand:extension.iac.lowerCase",
-    "onCommand:extension.iac.lowerFirst",
-    "onCommand:extension.iac.pascalCase",
-    "onCommand:extension.iac.snakeCase",
-    "onCommand:extension.iac.startCase",
-    "onCommand:extension.iac.titleCase",
-    "onCommand:extension.iac.toLower",
-    "onCommand:extension.iac.toUpper",
-    "onCommand:extension.iac.unescape",
-    "onCommand:extension.iac.upperCase",
-    "onCommand:extension.iac.upperFirst"
-  ],
-  "categories": [
-    "Other"
-  ],
   "contributes": {
     "commands": [
       {
@@ -201,7 +122,70 @@
       }
     ]
   },
-  "displayName": "In Any Case",
-  "icon": "icon.png",
-  "publisher": "will-stone"
+  "activationEvents": [
+    "onCommand:extension.iac.camelCase",
+    "onCommand:extension.iac.capitalize",
+    "onCommand:extension.iac.constantCase",
+    "onCommand:extension.iac.deburr",
+    "onCommand:extension.iac.escape",
+    "onCommand:extension.iac.kebabCase",
+    "onCommand:extension.iac.lowerCase",
+    "onCommand:extension.iac.lowerFirst",
+    "onCommand:extension.iac.pascalCase",
+    "onCommand:extension.iac.snakeCase",
+    "onCommand:extension.iac.startCase",
+    "onCommand:extension.iac.titleCase",
+    "onCommand:extension.iac.toLower",
+    "onCommand:extension.iac.toUpper",
+    "onCommand:extension.iac.unescape",
+    "onCommand:extension.iac.upperCase",
+    "onCommand:extension.iac.upperFirst"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{css,json,md}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "prettier": "@will-stone/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "@will-stone/eslint-config",
+      "@will-stone/eslint-config/node",
+      "@will-stone/eslint-config/typescript"
+    ]
+  },
+  "dependencies": {
+    "@will-stone/title-case": "^1.0.10",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/lodash": "^4.14.149",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^8.10.59",
+    "@types/vscode": "1.40.0",
+    "@will-stone/eslint-config": "^1.6.0",
+    "@will-stone/prettier-config": "^3.0.1",
+    "eslint": "^7.0.0",
+    "glob": "^7.1.6",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.2",
+    "mocha": "^6.2.2",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.0",
+    "vsce": "^1.70.0",
+    "vscode-test": "^1.2.3"
+  },
+  "engines": {
+    "vscode": "^1.40.0"
+  },
+  "icon": "icon.png"
 }

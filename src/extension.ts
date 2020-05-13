@@ -8,11 +8,11 @@ import TextEditor = vscode.TextEditor
 export function doChange(changer: TChanger): void {
   const editor = vscode.window.activeTextEditor as TextEditor
   const { document, selections } = editor
-  editor.edit(edit => {
-    selections.forEach(selection => {
+  editor.edit((edit) => {
+    selections.forEach((selection) => {
       const text = document.getText(new Range(selection.start, selection.end))
-      const newText = changer(text)
-      edit.replace(selection, newText)
+      const updatedText = changer(text)
+      edit.replace(selection, updatedText)
     })
   })
 }
