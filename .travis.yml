@@ -19,6 +19,6 @@ install:
 script:
   - |
     echo ">>> Compile and test"
-    yarn && yarn compile && yarn test
+    yarn --ignore-optional && yarn compile && yarn test
 
 cache: yarn

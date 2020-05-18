@@ -172,10 +172,7 @@
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.12.6",
     "@types/vscode": "1.45.0",
-    "eslint": "^7.0.0",
     "glob": "^7.1.6",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.2",
     "mocha": "^6.2.2",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
@@ -188,7 +185,10 @@
   },
   "optionalDependencies": {
     "@will-stone/eslint-config": "^1.6.0",
-    "@will-stone/prettier-config": "^3.0.1"
+    "@will-stone/prettier-config": "^3.0.1",
+    "eslint": "^7.0.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.2"
   },
   "engines": {
     "vscode": "^1.45.0"
