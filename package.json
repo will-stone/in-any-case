@@ -23,16 +23,19 @@
   "publisher": "will-stone",
   "main": "./dist/extension.js",
   "scripts": {
+    "precompile": "rimraf dist",
+    "compile": "tsc",
     "lint": "eslint './**/*.ts'",
     "release": "vsce publish",
-    "pretest": "yarn webpack",
+    "pretest": "yarn compile",
     "test": "node ./dist/test/runTest.js",
     "typecheck": "tsc --noEmit --skipLibCheck",
-    "vscode:prepublish": "yarn webpack-prod",
+    "vscode:prepublish": "yarn webpack:prod",
+    "prewebpack": "rimraf dist",
     "webpack": "webpack --mode development",
-    "webpack-dev": "webpack --mode development --watch",
-    "prewebpack-prod": "rimraf dist",
-    "webpack-prod": "webpack --mode production"
+    "prewebpack:prod": "rimraf dist",
+    "webpack:prod": "webpack --mode production",
+    "webpack:watch": "yarn webpack --watch"
   },
   "contributes": {
     "commands": [
