@@ -20,7 +20,7 @@ const CASES: Case[] = [
     changer: (string: string): string => camelCase(string),
     commandId: 'camelCase',
     testInput: 'lorem ipsum Dolor sit_Amet',
-    testOutput: 'loremIpsumDolorSitmet',
+    testOutput: 'loremIpsumDolorSitAmet',
   },
   {
     changer: (string: string): string => capitalize(string),
