@@ -174,7 +174,6 @@
     "@types/vscode": "1.45.0",
     "glob": "^7.1.6",
     "mocha": "^6.2.2",
-    "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
     "ts-loader": "^7.0.4",
     "typescript": "^3.9.0",
@@ -188,7 +187,8 @@
     "@will-stone/prettier-config": "^3.0.1",
     "eslint": "^7.0.0",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.2"
+    "lint-staged": "^10.2.2",
+    "prettier": "^2.0.5"
   },
   "engines": {
     "vscode": "^1.45.0"
