@@ -13,6 +13,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - run: yarn install --ignore-optional
-      - run: yarn test
+      - run: yarn install
+      - name: Run tests
+        uses: GabrielBB/xvfb-action@v1.2
+        with:
+          run: yarn test
 
