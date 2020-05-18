@@ -191,5 +191,9 @@
   "engines": {
     "vscode": "^1.45.0"
   },
-  "icon": "icon.png"
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#222222",
+    "theme": "dark"
+  }
 }
