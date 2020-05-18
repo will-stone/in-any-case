@@ -12,11 +12,11 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 8.x
+          node-version: 12.x
       - run: yarn install --ignore-optional
       - run: yarn compile
       - name: Run tests
-        uses: GabrielBB/xvfb-action@v1.0
+        uses: GabrielBB/xvfb-action@v1.2
         with:
           run: yarn test
 
