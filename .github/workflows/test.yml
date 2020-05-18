@@ -14,5 +14,5 @@ jobs:
         with:
           node-version: 12.x
       - run: yarn install --ignore-optional
-      - name: yarn test
+      - run: yarn test
 
