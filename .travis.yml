@@ -3,7 +3,7 @@ language: node_js
 os:
   - linux
 
-node_js: 8
+node_js: 12
 
 before_install:
   - if [ $TRAVIS_OS_NAME == "linux" ]; then export CXX="g++-4.9" CC="gcc-4.9"
@@ -19,6 +19,6 @@ install:
 script:
   - |
     echo ">>> Compile and test"
-    yarn && yarn test
+    yarn && yarn compile && yarn test
 
 cache: yarn
