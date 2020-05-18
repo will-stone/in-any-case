@@ -6,7 +6,11 @@ file.
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how
 to structure this file.
 
-## 1.1.3 2020-05-13
+## 1.1.4 2020-05-18
+
+- Configure Marketplace gallery banner.
+
+## 1.1.3 2020-05-18
 
 - Updated logo.
 
