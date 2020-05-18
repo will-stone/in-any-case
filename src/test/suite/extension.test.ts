@@ -1,11 +1,6 @@
 import * as assert from 'assert'
 import * as vscode from 'vscode'
 
-import Position = vscode.Position
-import Range = vscode.Range
-import Selection = vscode.Selection
-import TextEditor = vscode.TextEditor
-
 import CASES from '../../cases'
 
 const delay = (ms: number): Promise<void> => {
@@ -15,7 +10,7 @@ const delay = (ms: number): Promise<void> => {
 }
 
 const testString = async (cmd: string): Promise<string> => {
-  const editor = vscode.window.activeTextEditor as TextEditor
+  const editor = vscode.window.activeTextEditor as vscode.TextEditor
   const { document } = editor
   await vscode.commands.executeCommand(`extension.iac.${cmd}`)
   // above await doesn't work for some reason. This hack fixes that.
@@ -25,11 +20,17 @@ const testString = async (cmd: string): Promise<string> => {
 }
 
 const reset = async (testInput: string): Promise<void> => {
-  const editor = vscode.window.activeTextEditor as TextEditor
+  const editor = vscode.window.activeTextEditor as vscode.TextEditor
   await editor.edit((edit) => {
-    edit.replace(new Range(new Position(0, 0), new Position(0, 27)), testInput)
+    edit.replace(
+      new vscode.Range(new vscode.Position(0, 0), new vscode.Position(0, 27)),
+      testInput,
+    )
   })
-  editor.selection = new Selection(new Position(0, 0), new Position(0, 27))
+  editor.selection = new vscode.Selection(
+    new vscode.Position(0, 0),
+    new vscode.Position(0, 27),
+  )
 }
 
 describe('Extension Tests', () => {
