@@ -6,6 +6,10 @@ file.
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how
 to structure this file.
 
+## 1.1.5 2020-05-21
+
+- Updating all dependencies.
+
 ## 1.1.4 2020-05-18
 
 - Configure Marketplace gallery banner.
