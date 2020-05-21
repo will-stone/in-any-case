@@ -363,10 +363,10 @@
   dependencies:
     prettier-plugin-packagejson "^2.1.2"
 
-"@will-stone/title-case@^1.0.14":
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/@will-stone/title-case/-/title-case-1.0.14.tgz#43f8d924cd94431a6050468c69e5e467137b443a"
-  integrity sha512-9FjW5LWnJVRLxAZOqXNvszXfi5hJjq4FaVEuDJyMFaSakvqgnDxbGn04NGJDOQzd+PtCdQfRjHWBNs2hJjzIjg==
+"@will-stone/title-case@^1.0.15":
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/@will-stone/title-case/-/title-case-1.0.15.tgz#f6b56e50ac5715a2aa468fdd48ddb8d36ce7934b"
+  integrity sha512-PHGixcDoFHs1sDulGmKqFdVPOw+E6lrVaxPY6w/f5qHJ3HMzmI+HLU+fBtAIweApw7rkXkQcl4NS13Sj6PzFoA==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"

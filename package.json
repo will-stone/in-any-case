@@ -167,7 +167,7 @@
     ]
   },
   "dependencies": {
-    "@will-stone/title-case": "^1.0.14",
+    "@will-stone/title-case": "^1.0.15",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
