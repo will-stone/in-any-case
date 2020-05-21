@@ -14,5 +14,7 @@ jobs:
         with:
           node-version: 12.x
       - run: yarn install
+      - run: yarn lint
+      - run: yarn typecheck
       - run: yarn test
 
