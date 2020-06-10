@@ -177,7 +177,7 @@
     "@types/node": "^14.0.5",
     "@types/vscode": "1.45.1",
     "@will-stone/eslint-config": "^1.10.0",
-    "@will-stone/prettier-config": "^3.0.1",
+    "@will-stone/prettier-config": "^3.1.0",
     "eslint": "^7.0.0",
     "glob": "^7.1.6",
     "husky": "^4.2.5",
