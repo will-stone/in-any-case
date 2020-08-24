@@ -1,4 +1,3 @@
-import titleCase from '@will-stone/title-case'
 import camelCase from 'lodash/camelCase'
 import capitalize from 'lodash/capitalize'
 import deburr from 'lodash/deburr'
@@ -14,6 +13,7 @@ import toUpper from 'lodash/toUpper'
 import unescape from 'lodash/unescape'
 import upperCase from 'lodash/upperCase'
 import upperFirst from 'lodash/upperFirst'
+import toTitleCase from 'tings/toTitleCase'
 
 const CASES: Case[] = [
   {
@@ -83,7 +83,7 @@ const CASES: Case[] = [
     testOutput: 'Lorem Ipsum Dolor Sit Amet',
   },
   {
-    changer: (string: string): string => titleCase(string),
+    changer: (string: string): string => toTitleCase(string),
     commandId: 'titleCase',
     testInput: 'this is a test',
     testOutput: 'This is a Test',
