@@ -193,7 +193,7 @@
     "webpack-cli": "^3.3.12"
   },
   "engines": {
-    "vscode": "^1.45.1"
+    "vscode": "^1.48.0"
   },
   "icon": "icon.png",
   "galleryBanner": {
