@@ -4942,10 +4942,10 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
-tings@^0.0.15:
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/tings/-/tings-0.0.15.tgz#14a230c3d6b740d955c7a560b631e385e63ede48"
-  integrity sha512-CvaJIxsKh4hnOzY5EYh/rG1LcFVPeepKKz9Stpl0Nwsltf63Sp8Fz+/duoXzd6O6BCy/TEdjQr/KBip9wFY24g==
+tings@^0.0.20:
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/tings/-/tings-0.0.20.tgz#1d982ef3cca8388cedcdb0fca2413b26187d98ac"
+  integrity sha512-ymICQi7sjOaKmPLdsYzAPdcWCF5xd8Mh7ocQFGqKH7duENZBoyTjOlV9xUObwzqP5VsKpMR0j8T/uw25gPcMRQ==
 
 tmp@0.0.29:
   version "0.0.29"
