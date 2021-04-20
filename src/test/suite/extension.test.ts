@@ -44,7 +44,7 @@ describe('Extension Tests', () => {
       reset(testInput).then(() =>
         testString(commandId)
           .then((text) => {
-            assert.equal(text, testOutput)
+            assert.strictEqual(text, testOutput)
           })
           .then(done),
       )
