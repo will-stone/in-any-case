@@ -26,11 +26,11 @@ const reset = async (testInput: string): Promise<void> => {
       new vscode.Range(new vscode.Position(0, 0), new vscode.Position(0, 27)),
       testInput,
     )
+    editor.selection = new vscode.Selection(
+      new vscode.Position(0, 0),
+      new vscode.Position(0, 27),
+    )
   })
-  editor.selection = new vscode.Selection(
-    new vscode.Position(0, 0),
-    new vscode.Position(0, 27),
-  )
 }
 
 describe('Extension Tests', () => {
@@ -40,10 +40,14 @@ describe('Extension Tests', () => {
   })
 
   for (const { commandId, testInput, testOutput } of CASES) {
-    it(commandId, async () => {
-      await reset(testInput)
-      const text = await testString(commandId)
-      assert.strictEqual(text, testOutput)
+    it(commandId, (done) => {
+      reset(testInput).then(() =>
+        testString(commandId)
+          .then((text) => {
+            assert.strictEqual(text, testOutput)
+          })
+          .then(done),
+      )
     })
   }
 })
