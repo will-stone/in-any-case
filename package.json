@@ -94,11 +94,6 @@
       },
       {
         "category": "In Any Case",
-        "command": "extension.iac.titleCase",
-        "title": "Title Case"
-      },
-      {
-        "category": "In Any Case",
         "command": "extension.iac.toLower",
         "title": "to_lower"
       },
@@ -136,7 +131,6 @@
     "onCommand:extension.iac.pascalCase",
     "onCommand:extension.iac.snakeCase",
     "onCommand:extension.iac.startCase",
-    "onCommand:extension.iac.titleCase",
     "onCommand:extension.iac.toLower",
     "onCommand:extension.iac.toUpper",
     "onCommand:extension.iac.unescape",
