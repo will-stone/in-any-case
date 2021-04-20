@@ -40,14 +40,10 @@ describe('Extension Tests', () => {
   })
 
   for (const { commandId, testInput, testOutput } of CASES) {
-    it(commandId, (done) => {
-      reset(testInput).then(() =>
-        testString(commandId)
-          .then((text) => {
-            assert.strictEqual(text, testOutput)
-          })
-          .then(done),
-      )
+    it(commandId, async () => {
+      await reset(testInput)
+      const text = await testString(commandId)
+      assert.strictEqual(text, testOutput)
     })
   }
 })
