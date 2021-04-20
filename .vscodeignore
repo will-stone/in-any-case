@@ -8,3 +8,8 @@ vsc-extension-quickstart.md
 **/.eslintrc.json
 **/*.map
 **/*.ts
+.husky/**
+.github/**
+.nvmrc
+icon.afdesign
+webpack.config.js

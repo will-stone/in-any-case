@@ -1,20 +1,18 @@
-import {
-  camelCase,
-  capitalize,
-  deburr,
-  escape,
-  flow,
-  kebabCase,
-  lowerCase,
-  lowerFirst,
-  snakeCase,
-  startCase,
-  toLower,
-  toUpper,
-  unescape,
-  upperCase,
-  upperFirst,
-} from 'lodash'
+import camelCase from 'lodash/camelCase'
+import capitalize from 'lodash/capitalize'
+import deburr from 'lodash/deburr'
+import escape from 'lodash/escape'
+import flow from 'lodash/flow'
+import kebabCase from 'lodash/kebabCase'
+import lowerCase from 'lodash/lowerCase'
+import lowerFirst from 'lodash/lowerFirst'
+import snakeCase from 'lodash/snakeCase'
+import startCase from 'lodash/startCase'
+import toLower from 'lodash/toLower'
+import toUpper from 'lodash/toUpper'
+import unescape from 'lodash/unescape'
+import upperCase from 'lodash/upperCase'
+import upperFirst from 'lodash/upperFirst'
 
 import type { Case } from './model'
 
