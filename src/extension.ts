@@ -17,10 +17,15 @@ export function doChange(changer: TChanger): void {
   })
 }
 
-export const activate = (): void => {
+export const activate = (context: vscode.ExtensionContext): void => {
   CASES.forEach(({ commandId, changer }) => {
-    vscode.commands.registerCommand(`extension.iac.${commandId}`, () => {
-      doChange(changer)
-    })
+    const disposable = vscode.commands.registerCommand(
+      `extension.iac.${commandId}`,
+      () => {
+        doChange(changer)
+      },
+    )
+
+    context.subscriptions.push(disposable)
   })
 }
