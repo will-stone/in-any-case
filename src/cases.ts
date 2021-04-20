@@ -16,6 +16,8 @@ import {
   upperFirst,
 } from 'lodash'
 
+import type { Case } from './model'
+
 const CASES: Case[] = [
   {
     changer: (string: string): string => camelCase(string),

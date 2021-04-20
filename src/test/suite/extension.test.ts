@@ -39,7 +39,7 @@ describe('Extension Tests', () => {
     await vscode.window.showTextDocument(document)
   })
 
-  CASES.forEach(({ commandId, testInput, testOutput }) => {
+  for (const { commandId, testInput, testOutput } of CASES) {
     it(commandId, (done) => {
       reset(testInput).then(() =>
         testString(commandId)
@@ -49,5 +49,5 @@ describe('Extension Tests', () => {
           .then(done),
       )
     })
-  })
+  }
 })

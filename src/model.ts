@@ -1,6 +1,6 @@
-type TChanger = (str: string) => string
+export type TChanger = (string: string) => string
 
-interface Case {
+export interface Case {
   commandId: string
   changer: TChanger
   testInput: string
