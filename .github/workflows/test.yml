@@ -13,15 +13,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 15.x
-      - name: Run display server 🖥
-        run:
-          /usr/bin/Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & echo
-          "Started xvfb"
-        shell: bash
-        if: ${{ success() && matrix.os == 'ubuntu-latest' }}
       - run: npm install
       - run: npm run lint
       - run: npm run typecheck
-      - run: npm run test
-        env:
-          DISPLAY: ':99.0'
+      - run: xvfb-run -a npm run test
