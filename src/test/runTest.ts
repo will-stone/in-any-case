@@ -15,7 +15,7 @@ async function main(): Promise<void> {
     await runTests({
       extensionDevelopmentPath,
       extensionTestsPath,
-      launchArgs: ['--disable-extensions'],
+      // launchArgs: ['--disable-extensions'],
     })
   } catch {
     // eslint-disable-next-line no-console
