@@ -1,7 +1,7 @@
 /* eslint-disable unicorn/no-null */
 /* eslint-disable no-console */
-import * as assert from 'assert'
-import * as vscode from 'vscode'
+import assert from 'assert'
+import vscode from 'vscode'
 
 import CASES from '../../cases'
 
@@ -34,7 +34,7 @@ describe('Extension Tests', () => {
       // `then` but no luck. I don't know why it doesn't work 😭 So we now have
       // to resort to a hacky sleep.
       await new Promise((resolve) => {
-        setTimeout(resolve, 5)
+        setTimeout(resolve, 100)
       })
 
       const actual = document.getText()

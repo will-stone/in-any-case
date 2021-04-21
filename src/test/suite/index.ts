@@ -1,8 +1,15 @@
 import glob from 'glob'
 import Mocha from 'mocha'
 import path from 'path'
+import vscode from 'vscode'
 
-export function run(): Promise<void> {
+export async function run(): Promise<void> {
+  // Let VS Code load the test workspace.
+  await vscode.workspace.openTextDocument()
+  await new Promise((resolve) => {
+    setTimeout(resolve, 2000)
+  })
+
   // Create the mocha test
   const mocha = new Mocha({
     ui: 'bdd',
