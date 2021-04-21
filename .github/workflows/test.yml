@@ -4,7 +4,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
@@ -16,4 +16,4 @@ jobs:
       - run: npm install
       - run: npm run lint
       - run: npm run typecheck
-      - run: xvfb-run -a npm test
+      - run: npm test
