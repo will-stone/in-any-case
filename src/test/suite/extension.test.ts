@@ -1,53 +1,45 @@
-import * as assert from 'assert'
-import * as vscode from 'vscode'
+/* eslint-disable unicorn/no-null */
+/* eslint-disable no-console */
+import assert from 'assert'
+import vscode from 'vscode'
 
 import CASES from '../../cases'
 
-const delay = (ms: number): Promise<void> => {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms)
-  })
-}
-
-const testString = async (cmd: string): Promise<string> => {
-  const editor = vscode.window.activeTextEditor as vscode.TextEditor
-  const { document } = editor
-  await vscode.commands.executeCommand(`extension.iac.${cmd}`)
-  // above await doesn't work for some reason. This hack fixes that.
-  await delay(150)
-  const text = document.getText()
-  return text
-}
-
-const reset = async (testInput: string): Promise<void> => {
-  const editor = vscode.window.activeTextEditor as vscode.TextEditor
-  await editor.edit((edit) => {
-    edit.replace(
-      new vscode.Range(new vscode.Position(0, 0), new vscode.Position(0, 27)),
-      testInput,
-    )
-  })
-  editor.selection = new vscode.Selection(
-    new vscode.Position(0, 0),
-    new vscode.Position(0, 27),
-  )
-}
-
 describe('Extension Tests', () => {
-  before(async () => {
-    const document = await vscode.workspace.openTextDocument()
-    await vscode.window.showTextDocument(document)
-  })
+  for (const { commandId, testInput, testOutput } of CASES) {
+    it(commandId, async () => {
+      const document = await vscode.workspace.openTextDocument()
+      const editor = await vscode.window.showTextDocument(document)
 
-  CASES.forEach(({ commandId, testInput, testOutput }) => {
-    it(commandId, (done) => {
-      reset(testInput).then(() =>
-        testString(commandId)
-          .then((text) => {
-            assert.equal(text, testOutput)
-          })
-          .then(done),
+      await editor.edit((editBuilder) => {
+        editBuilder.replace(
+          new vscode.Selection(
+            new vscode.Position(0, 0),
+            new vscode.Position(0, 99),
+          ),
+          testInput,
+        )
+      })
+
+      assert.strictEqual(document.getText(), testInput)
+
+      editor.selection = new vscode.Selection(
+        new vscode.Position(0, 0),
+        new vscode.Position(0, 99),
       )
+
+      await vscode.commands.executeCommand(`extension.iac.${commandId}`)
+
+      // The above doesn't wait for the text to actually change. I've tried using
+      // `then` but no luck. I don't know why it doesn't work 😭 So we now have
+      // to resort to a hacky sleep.
+      await new Promise((resolve) => {
+        setTimeout(resolve, 100)
+      })
+
+      const actual = document.getText()
+
+      assert.deepStrictEqual(actual, testOutput)
     })
-  })
+  }
 })

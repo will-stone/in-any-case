@@ -1,38 +1,49 @@
 import glob from 'glob'
 import Mocha from 'mocha'
-import * as path from 'path'
+import path from 'path'
+import vscode from 'vscode'
 
-export function run(): Promise<void> {
+export async function run(): Promise<void> {
+  // Let VS Code load the test workspace.
+  await vscode.workspace.openTextDocument()
+  await new Promise((resolve) => {
+    setTimeout(resolve, 2000)
+  })
+
   // Create the mocha test
   const mocha = new Mocha({
     ui: 'bdd',
+    color: true,
   })
 
   const testsRoot = path.resolve(__dirname, '..')
 
-  return new Promise((callback, errorCallback) => {
+  // eslint-disable-next-line unicorn/prevent-abbreviations
+  return new Promise((c, e) => {
     glob('**/**.test.js', { cwd: testsRoot }, (error, files) => {
       if (error) {
-        return errorCallback(error)
+        return e(error)
       }
 
       // Add files to the test suite
-      files.forEach((f) => mocha.addFile(path.resolve(testsRoot, f)))
+      for (const f of files) {
+        mocha.addFile(path.resolve(testsRoot, f))
+      }
 
       try {
         // Run the mocha test
         mocha.run((failures) => {
           if (failures > 0) {
-            return errorCallback(new Error(`${failures} tests failed.`))
+            e(new Error(`${failures} tests failed.`))
+          } else {
+            c()
           }
-
-          return callback()
         })
-      } catch (error_) {
-        return errorCallback(error_)
+      } catch (caughtError) {
+        // eslint-disable-next-line no-console
+        console.error(caughtError)
+        e(caughtError)
       }
-
-      return false
     })
   })
 }

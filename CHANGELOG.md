@@ -6,6 +6,11 @@ file.
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how
 to structure this file.
 
+## 2.0.0 2021-04-20
+
+- Removed title case: it has many pitfalls and only supported English. For now,
+  this extension will only track Lodash string manipulation techniques.
+
 ## 1.1.5 2020-05-21
 
 - Updating all dependencies.

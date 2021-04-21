@@ -13,7 +13,8 @@ import toUpper from 'lodash/toUpper'
 import unescape from 'lodash/unescape'
 import upperCase from 'lodash/upperCase'
 import upperFirst from 'lodash/upperFirst'
-import toTitleCase from 'tings/toTitleCase'
+
+import type { Case } from './model'
 
 const CASES: Case[] = [
   {
@@ -81,12 +82,6 @@ const CASES: Case[] = [
     commandId: 'startCase',
     testInput: 'Lorem ipsum Dolor sit_Amet',
     testOutput: 'Lorem Ipsum Dolor Sit Amet',
-  },
-  {
-    changer: (string: string): string => toTitleCase(string),
-    commandId: 'titleCase',
-    testInput: 'this is a test',
-    testOutput: 'This is a Test',
   },
   {
     changer: (string: string): string => toLower(string),

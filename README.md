@@ -27,7 +27,6 @@ Available commands:
 - PascalCase
 - snake_case
 - Start Case
-- Title Case (Small Words Remain in Lower Case)
 - to_lower
 - TO_UPPER
 - Unescape
@@ -39,7 +38,7 @@ Available commands:
 Install dependencies:
 
 ```sh
-yarn
+npm i
 ```
 
 Run the extension by opening the debug sidebar in VSCode and clicking the play
